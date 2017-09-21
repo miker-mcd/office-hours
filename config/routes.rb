@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  # root "session#index"
-
+  root "static#home"
 
   resources :projects do
     resources :updates
   end
-
-
 end
