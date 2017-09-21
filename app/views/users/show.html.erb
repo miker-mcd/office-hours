@@ -1,5 +1,7 @@
-<h1>Hello</h1>
-
-<div><%= @user.email %></div>
+<h1>Hello <%= @user.email %></h1>
 
 <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+
+<% if current_user.admin? %>
+  <%= link_to "Edit User", edit_user_registration_path %>
+<% end %>
