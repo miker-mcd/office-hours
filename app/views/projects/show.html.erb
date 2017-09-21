@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <p>
+  <strong> Title: </strong>
+    <%= @project.title %>
+  </p>
+
+    <p>
+  <strong> Description: </strong>
+    <%= @project.description %>
+  </p>
+
+  <td><%= link_to "Edit", edit_project_path(@project) %> </td>
+  <%= link_to 'Back' , projects_path %>
+
+</body>
+</html>
