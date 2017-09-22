@@ -1,0 +1,20 @@
+<h1><%= @update.title %></h1>
+<% if @update.approval == false %>
+  <%= form_tag("/updates/#{@update.id}", method: :put) do%>
+    <%= submit_tag("Approve") %>
+  <% end %>
+  <%= form_tag("/updates/#{@update.id}", method: :delete) do %>
+    <%= submit_tag("Deny") %>
+  <% end %>
+<% end %>
+<% if @update.approval %>
+  <%= link_to "Edit", edit_update_path(@update) %>
+  <%= link_to "Delete", update_path(@update) %>
+<% end %>
+<ul>
+  <li>id: <%= @update.id %></li>
+  <li>description: <%= @update.description %></li>
+  <li>user's email: <%= @update.user.email %></li>
+  <li>project's title: <%= link_to @update.project.title, @update.project %></li>
+</ul>
+<%#= link_to "Back", project_updates_path %>
