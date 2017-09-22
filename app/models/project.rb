@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
-  belongs_to :staff, class_name: :User
-  # belongs_to :student, class_name: :User
+  belongs_to :user
 
   has_many :updates
+  has_many :subscriptions
 end
