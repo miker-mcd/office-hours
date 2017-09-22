@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   root "session#index"
 
   resources :users do
-    resources :projects do
-      resources :updates
+    resources :projects, shallow: true do
+      resources :updates, shallow: true
     end
   end
+
+  # resources :users do
+  #   resources :updates
+  # end
 end
