@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    if current_user.admin?
+      @projects = current_user.projects
+    else
+      @projects = Project.all
+    end
   end
 
   def show
@@ -13,10 +17,10 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.staff_id = current_user.id
+    @project.user_id = current_user.id
 
     if @project.save
-      redirect_to @project
+      redirect_to current_user
     else
       render 'new'
     end
@@ -44,6 +48,6 @@ class ProjectsController < ApplicationController
 
   private
     def project_params
-      params.require(:project).permit(:title, :description, :subject)
+      params.require(:project).permit(:title, :description, :subject, :user_id)
     end
 end

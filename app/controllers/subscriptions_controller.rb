@@ -1,8 +1,8 @@
 class SubscriptionsController < ApplicationController
 
-  def new
-    @user = User.find(session[:user_id])
-    @project = Project.find(params[:project_id])
+  def create
+    @user = current_user
+    @project = Project.find(params[:id])
 
     @subscription = Subscription.new(user: @user, project: @project)
     if @subscription.save

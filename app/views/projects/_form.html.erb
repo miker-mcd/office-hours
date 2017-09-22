@@ -26,12 +26,11 @@
 
 <p>
   <%= form.label :subject %> <br>
-  <%= form.number_field :subject %>
+  <%= form.select(:subject, [['Chemistry', 1], ['Biology', 2], ['Science', 3], ['Anatomy', 4]]) %>
 </p>
 
 <p>
-  <%= form.label :staff_id %> <br>
-  <%= form.number_field :staff_id %>
+  <%= form.hidden_field :user_id, :value => current_user %><br>
 </p>
 
 <p>
