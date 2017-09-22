@@ -1,0 +1,7 @@
+<h1><%= @project.title %> Updates</h1>
+<%= link_to "New Update", new_project_update_path %>
+<ul>
+  <% @updates.each do |update| %>
+    <li><%= link_to update.title, update %></li>
+  <% end %>
+</ul>
