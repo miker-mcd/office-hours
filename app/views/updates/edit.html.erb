@@ -1,0 +1,17 @@
+<% if @errors && @errors.any? %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h1>Edit: <%= @update.title %></h1>
+
+<%= form_for [@project, @update] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<%= f.submit "Update" %>
+<% end %>
