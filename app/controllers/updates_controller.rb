@@ -24,14 +24,14 @@ class UpdatesController < ApplicationController
   def create
     @update = Update.new(update_params)
     # @update.user_id = current_user.id
-    @update.user_id = 3 #seed user
+    @update.user_id = current_user
     @update.project_id = params[:project_id]
     if @update.save
-      redirect_to action: "index"
+      redirect_to project_updates_path
     else
-      status 422
+      #status 422
       @errors = @update.errors.full_messages
-      render :new
+      redirect_to new_project_update_path
     end
   end
 
@@ -66,7 +66,7 @@ class UpdatesController < ApplicationController
 private
 
   def update_params
-    params.require(:update).permit(:title, :description)
+    params.require(:update).permit(:title, :description, :status, :approval)
   end
 
 end
