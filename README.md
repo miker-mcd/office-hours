@@ -23,34 +23,10 @@ This app integrated the Google Maps API to display the location of the proposal 
 ## Challenges
 One of the main goals of this project was to simulate a client relationship by gathering specifications and requirements in order to deliver a satisfactory product. The challenge we faced was to establish frequent communication so that we could share information that would help limit any issues or unforeseen changes. We learned that client interactions are valuable opportunities that should be conducted early and often.
 
-Another challenge was implementing admin roles with regards to faculty permissions. We utilized the Devise gem for authentication, however differentiating between faculty members and students is still unclear when a new user registers. A solution would be to implement faculty invitations that provide a link to a separate member registration form or a unique code to be inputted on the registration form.
+Another challenge was implementing admin roles with regards to faculty permissions. We utilized the Devise gem for authentication, however differentiating between faculty members and students is still unclear when a new user registers. A solution would be to implement faculty invitations via email or text message that provide a link to a separate member registration form or a unique code to be inputted on the registration form.
 
 ## Next Steps
-
+We want to further explore Materialize to enhance the overall design of the application as well as make it mobile-responsive. We would also like to develop an option to archive completed projects and proposals, so that members could refer to them in a convenient place. Filtering proposals through a search bar, categories or tags would also improve the User Experience.
 
 ## The Team
   - Team Members: Michael McDonald([miker-mcd](https://github.com/miker-mcd)), David Keller([dckeller](https://github.com/dckeller)) and Daniel Way([dwaypro](https://github.com/dwaypro))
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
